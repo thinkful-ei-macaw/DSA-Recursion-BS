@@ -111,3 +111,29 @@ function splitter(str, separator, test = 0) {
 }
 
 splitter('02/20/2020', '/')
+
+
+// Write a recursive function that prints the Fibonacci sequence of a given number. The Fibonacci sequence is a series of numbers in which each number is the sum of the 2 preceding numbers. For example, the 7th Fibonacci number in a Fibonacci sequence is 13. The sequence looks as follows: 1, 1, 2, 3, 5, 8, 13.
+
+// 1 1
+// 1 2
+// 2 3
+// 3 4
+// 5 5
+// 8 6
+// 13 7
+
+function fib(num) {
+  if (num === 1) {
+    return 1
+  }
+  if (num === 2) {
+    return 1
+  }
+  return fib(num - 1)  + fib(num - 2)
+}
+
+fib(7)
+
+
+Write a recursive function that finds the factorial of a given number. The factorial of a number can be found by multiplying that number by each number between itself and 1. For example, the factorial of 5 is 5 * 4 * 3 * 2 * 1 = 120.
