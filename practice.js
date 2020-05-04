@@ -87,3 +87,27 @@ function triangle(num) {
 triangle(3)
 
 
+// Write a recursive function that splits a string based on a separator (similar to String.prototype.split). Don't use JS array's split function to solve this problem.
+
+// Input: 02/20/2020
+// Output: ["02", "20", "2020"]
+
+// 02/20/2020  
+// 20/2020      ['02']
+// 2020          ['02','20']
+//             ["02", "20", "2020"]
+
+function splitter(str, separator, test = 0) {
+
+  if (!str.includes(separator)){
+    return [str]
+  }
+
+  let index = str.search(separator);
+  let newS = str.slice(0, index)
+  str = str.slice(index + 1, str.length)
+  console.log(str)
+  return [newS , ...splitter(str, separator)]
+}
+
+splitter('02/20/2020', '/')
