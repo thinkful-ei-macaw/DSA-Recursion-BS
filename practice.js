@@ -163,7 +163,7 @@ let mySmallMaze = [
     [' ', ' ', 'e']
 ];
 
-let maze = [
+let myBigMaze = [
     [' ', ' ', ' ', '*', ' ', ' ', ' '],
     ['*', '*', ' ', '*', ' ', '*', ' '],
     [' ', ' ', ' ', ' ', ' ', ' ', ' '],
@@ -177,7 +177,7 @@ let maze = [
 //if " ", increment index2 (y) and return d
 //if "e", return
 
-function travelMaze(maze, row = 0, column = 0, path, dir, position = 0) {
+function travelMaze(maze, row, column, path, dir, position) {
   // console.log(row, column)
   if (row < 0 || column < 0) {
     return;
@@ -199,15 +199,17 @@ function travelMaze(maze, row = 0, column = 0, path, dir, position = 0) {
   if (maze[row][column] === ' ') {
     maze[row][column] = 'visted';
     
-    travelMaze(maze, row, column + 1, path, 'R') //right
-    travelMaze(maze, row + 1, column, path, 'D') //down
-    travelMaze(maze, row - 1, column, path, 'U') //up
-    travelMaze(maze, row, column - 1, path, 'L') //left
+    travelMaze(maze, row, column + 1, path, 'R', position) //right
+    travelMaze(maze, row + 1, column, path, 'D', position) //down
+    travelMaze(maze, row - 1, column, path, 'U', position) //up
+    travelMaze(maze, row, column - 1, path, 'L', position) //left
+
+    maze[row][column] = ' ';
   }
   position--
 }
 
-travelMaze(maze, 0, 0, [], '')
+travelMaze(myBigMaze, 0, 0, [], 'S', 0)
 
 
 // An anagram is any word or phrase that uses the letters of a given ("subject") word or phrase in another, rearranged order. Write a function that creates an anagram list, listing all the rearrangements of a given word. For example, if the user types "east", the program should list all 24 permutations, including "eats", "etas", "teas", and non-words like "tsae".
