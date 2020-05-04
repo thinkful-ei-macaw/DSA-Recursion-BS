@@ -28,3 +28,25 @@ function powerCalculator(base, exp) {
 
 powerCalculator(10,4)
 powerCalculator(10,2)
+
+// input: string
+// output: gnirts
+
+// string
+// tring  s
+// ring   ts
+// ing    rts
+// ng     irts
+// g      girts
+//        gnirts
+function reverseString(string, newS='') {
+  if  (!string.length) {
+    return ''
+  }
+  let char = string.slice(string.length-1)
+  newS = newS + char
+  string = string.slice(0, -1)
+  return newS + reverseString(string, newS)
+}
+
+reverseString('string')
