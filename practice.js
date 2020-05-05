@@ -39,23 +39,23 @@
 // powerCalculator(10,4)
 // powerCalculator(10,2)
 
-function powerCalculator(base, exp) {
-  if (exp <= 0) {
-    return "exponent should be >= 0";
-  } else if (base <= 0) {
-    return "base should be >= 0";
-  } else if (exp === 1) {
-    return base;
-  }
-  let results = 1;
-  for (let i = 0; i < exp; i++) {
-    results *= base;
-  }
+// function powerCalculator(base, exp) {
+//   if (exp <= 0) {
+//     return "exponent should be >= 0";
+//   } else if (base <= 0) {
+//     return "base should be >= 0";
+//   } else if (exp === 1) {
+//     return base;
+//   }
+//   let results = 1;
+//   for (let i = 0; i < exp; i++) {
+//     results *= base;
+//   }
 
-  console.log(results);
-}
+//   return console.log(results);
+// }
 
-powerCalculator(10, 5);
+// powerCalculator(10, 5);
 
 // // input: string
 // // output: gnirts
@@ -79,6 +79,16 @@ powerCalculator(10, 5);
 
 // reverseString('string')
 
+function reverseString(string) {
+  let str = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    str += string[i];
+  }
+
+  return str;
+}
+
+console.log(reverseString("muffins"));
 // // Calculate the nth triangular number.
 // //   A triangular number counts the objects that can form an equilateral triangle.
 // //   The nth triangular number is the number of dots composing a triangle with n dots on a side, and is equal to the sum of the n natural numbers from 1 to n.
