@@ -10,17 +10,17 @@
 
 // sheep(3)
 
-function sheep(num) {
-  for (let i = num; i > 0; i--) {
-    console.log(`${i}: Another sheep jumps over teh fence`);
-    if (i === 1) {
-      console.log("All sheep jumped over the fence");
-      return "All sheep jumped over the fence";
-    }
-  }
-}
+// function sheep(num) {
+//   for (let i = num; i > 0; i--) {
+//     console.log(`${i}: Another sheep jumps over teh fence`);
+//     if (i === 1) {
+//       console.log("All sheep jumped over the fence");
+//       return "All sheep jumped over the fence";
+//     }
+//   }
+// }
 
-sheep(3);
+// sheep(3);
 
 // function powerCalculator(base, exp) {
 //   if (exp <= 0) {
@@ -38,6 +38,24 @@ sheep(3);
 
 // powerCalculator(10,4)
 // powerCalculator(10,2)
+
+function powerCalculator(base, exp) {
+  if (exp <= 0) {
+    return "exponent should be >= 0";
+  } else if (base <= 0) {
+    return "base should be >= 0";
+  } else if (exp === 1) {
+    return base;
+  }
+  let results = 1;
+  for (let i = 0; i < exp; i++) {
+    results *= base;
+  }
+
+  console.log(results);
+}
+
+powerCalculator(10, 5);
 
 // // input: string
 // // output: gnirts
